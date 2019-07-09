@@ -32,7 +32,7 @@
             <v-list-tile-title>Settings</v-list-tile-title>
           </v-list-tile>
         </template>
-        <v-list-tile v-for="(setting, i) in settings" :key="i">
+        <v-list-tile v-for="(setting, i) in settings" :key="i" :to="setting[2]">
           <v-list-tile-action>
             <v-icon v-text="setting[1]"></v-icon>
           </v-list-tile-action>
@@ -53,10 +53,10 @@ export default class Sidebar extends Vue {
     ['Profile 2', 'account_circle']
   ];
   private settings = [
-    ['New Profile', 'add'],
-    ['Edit Profile', 'edit'],
-    ['Update', 'update'],
-    ['Delete', 'delete']
+    ['General', 'settings_applications', '/settings/general'],
+    ['New Profile', 'add', '/settings/profile/new'],
+    ['Edit Profile', 'edit', '/'],
+    ['Delete', 'delete', '/']
   ];
 }
 </script>
